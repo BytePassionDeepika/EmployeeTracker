@@ -43,31 +43,49 @@
             chart.draw(data, options);
         }
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+        body { display: flex; align-items: center; justify-content: center; flex-direction: column; min-height: 100vh; width: 100%; padding: 20px; background: url('https://cdn.papershift.com/20220523200629/employee-time-tracking-the-way-you-want-it-to-work-by-Papershift-min-scaled.jpeg') no-repeat center center fixed; background-size: cover; }
+        .container { max-width: 800px; width: 100%; padding: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
+        h1, h2 { color: #000; margin-bottom: 20px; text-align: center; font-size: 1.4em; }
+        form { display: flex; justify-content: center; align-items: center; margin-bottom: 20px; }
+        label { margin-right: 10px; }
+        input[type="date"] { padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; margin-right: 10px; }
+        input[type="submit"] { padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #0056b3; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 8px; background: #f9f9f9; border-bottom: 1px solid #ddd; }
+        #piechart { width: 100%; max-width: 800px; height: 500px; margin: 0 auto; }
+    </style>
 </head>
 <body>
-    <h1>Daily Tasks Chart</h1>
-    <form method="get" action="DailyTasksChartServlet">
-        <label for="date">Select Date:</label>
-        <input type="date" id="date" name="date" required>
-        <input type="submit" value="Generate Chart">
-    </form>
+    <div class="container">
+        <h1>Daily Tasks Chart</h1>
+        <form method="get" action="DailyTasksChartServlet">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+            <input type="submit" value="Generate Chart">
+        </form>
+        <div id="piechart"></div>
 
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-    
-    <% 
-        if (request.getAttribute("tasks") != null) {
-            List<Task> tasks = (List<Task>) request.getAttribute("tasks");
-    %>
-    <h2>Tasks for <%= request.getParameter("date") %></h2>
-    <ul>
-        <% if (tasks.isEmpty()) { %>
-            <li>No tasks found for <%= request.getParameter("date") %>.</li>
-        <% } else { %>
-            <% for (Task task : tasks) { %>
-                <li><%= task.getId() %> - <%= task.getCategory() %> - <%= task.getNumHours() %> hours</li>
-            <% } %>
+        <% 
+            if (request.getAttribute("tasks") != null) {
+                List<Task> tasks = (List<Task>) request.getAttribute("tasks");
+        %>
+        <div class="container">
+            <h2>Tasks for <%= request.getParameter("date") %></h2>
+            <ul>
+                <% if (tasks.isEmpty()) { %>
+                    <li>No tasks found for <%= request.getParameter("date") %>.</li>
+                <% } else { %>
+                    <% for (Task task : tasks) { %>
+                        <li><%= task.getId() %> - <%= task.getCategory() %> - <%= task.getNumHours() %> hours</li>
+                    <% } %>
+                <% } %>
+            </ul>
+        </div>
         <% } %>
-    </ul>
-    <% } %>
+    </div>
 </body>
 </html>
