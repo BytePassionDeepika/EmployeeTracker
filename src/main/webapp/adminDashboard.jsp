@@ -23,7 +23,7 @@
         <div class="card">
             <a href="view_employees.jsp" class="btn">View Employees</a>
             <a href="add_employee.jsp" class="btn">Add Employee</a>
-            <a href="addTask.jsp" class="btn">Add Task</a>
+            <a href="addtaskad.jsp" class="btn">Add Task</a>
             <a href="view_tasks.jsp" class="btn">View Tasks</a>
             <a href="view_charts.jsp" class="btn">View Charts</a>
         </div>
