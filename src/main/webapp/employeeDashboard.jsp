@@ -10,28 +10,12 @@
     <meta charset="UTF-8">
     <title>Employee Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .links {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+        body { display: flex; align-items: center; justify-content: center; min-height: 100vh; width: 100%; padding: 0; background: url('https://cdn.papershift.com/20220523200629/employee-time-tracking-the-way-you-want-it-to-work-by-Papershift-min-scaled.jpeg') no-repeat center center fixed; background-size: cover; }
+        .container { max-width: 800px; width: 90%; margin: 0 auto; padding: 20px; background: rgba(255, 255, 255, 0.9); border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { color: #000; margin-bottom: 20px; text-align: center; font-size: 1.4em; }
+        .links { text-align: center; margin-bottom: 20px; }
         .links a {
             text-decoration: none;
             padding: 10px 20px;
@@ -39,15 +23,11 @@
             background-color: #007bff;
             color: #fff;
             border-radius: 4px;
+            font-size: 0.85em;
+            transition: background-color 0.3s;
         }
-        .links a:hover {
-            background-color: #0056b3;
-        }
-        .task-list {
-            margin-top: 20px;
-            width: 100%;
-            border-collapse: collapse;
-        }
+        .links a:hover { background-color: #0056b3; }
+        .task-list { margin-top: 20px; width: 100%; border-collapse: collapse; }
         .task-list th, .task-list td {
             padding: 10px;
             border: 1px solid #ccc;
@@ -56,22 +36,22 @@
         .task-list th {
             background-color: #007bff;
             color: #fff;
+            font-size: 0.85em;
         }
-        .task-list td {
-            background-color: #f9f9f9;
-        }
-        .chart {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .chart img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border: 1px solid #ccc;
+        .task-list td { background-color: #f9f9f9; font-size: 0.85em; }
+        .chart { margin-top: 20px; text-align: center; }
+        .chart h2 { font-size: 1.2em; margin-bottom: 10px; }
+        .chart a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
             border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: background-color 0.3s;
         }
+        .chart a:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
@@ -123,13 +103,13 @@
         <!-- Display Charts -->
         <div class="chart">
             <h2>Daily Tasks/Hours (Pie Chart)</h2>
-            <a href="dailyTasksChart.jsp" >Daily Task</a>
+            <a href="dailyTasksChart.jsp">Daily Task</a>
 
             <h2>Weekly Tasks (Bar Chart)</h2>
-            <a href="weeklyTasksChart.jsp" >Weekly Task</a>
+            <a href="weeklyTasksChart.jsp">Weekly Task</a>
 
             <h2>Monthly Tasks (Bar Chart)</h2>
-            <a href="monthlyTasksChart.jsp" >Monthly Task</a>
+            <a href="monthlyTasksChart.jsp">Monthly Task</a>
         </div>
     </div>
 </body>
