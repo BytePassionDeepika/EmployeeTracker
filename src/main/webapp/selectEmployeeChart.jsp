@@ -5,22 +5,36 @@
     <meta charset="UTF-8">
     <title>Select Employee Chart</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap');
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            background: url('https://cdn.papershift.com/20220523200629/employee-time-tracking-the-way-you-want-it-to-work-by-Papershift-min-scaled.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
         .container {
             max-width: 600px;
-            margin: 0 auto;
+            width: 100%;
+            margin: 20px;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
         }
         h1 {
             color: #333;
+            margin-bottom: 20px;
+            text-align: center;
         }
         form {
             display: flex;
@@ -33,17 +47,20 @@
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            font-size: 16px;
         }
         .btn {
             padding: 10px 20px;
-            border-radius: 3px;
+            border-radius: 5px;
             color: white;
             background-color: #007bff;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s;
             border: none;
+            font-size: 16px;
         }
         .btn:hover {
             background-color: #0056b3;
