@@ -1,4 +1,4 @@
-# Employee Time Tracker
+# ⏱️👩‍💻📊Employee Time Tracker
 
 A **Java Servlet and JSP**-based web application designed to track and manage employee tasks, working hours, and project involvement with role-based access control (RBAC).
 
@@ -53,6 +53,7 @@ Employee-Time-Tracker/
 ├── database/      # SQL scripts for database setup
 └── README.md      # Project documentation
 ---
+```
 ## 🚀 Getting Started
 
 ### 1️⃣ Prerequisites
@@ -65,5 +66,3 @@ Employee-Time-Tracker/
 1. **Clone the repository**  
    ```bash
    git clone https://github.com/yourusername/employee-time-tracker.git
-## 📂 Project Structure
-
